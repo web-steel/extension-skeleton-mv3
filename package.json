@@ -1,0 +1,9 @@
+{
+  "name": "extension",
+  "version": "1.0.0",
+  "description": "Chrome extension in React!",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Vladimir Markov <web.steel89@gmail.com>",
+  "license": "MIT"
+}
