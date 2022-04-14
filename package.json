@@ -5,5 +5,10 @@
   "main": "index.js",
   "scripts": {},
   "author": "Vladimir Markov <web.steel89@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "react": "^18.0.0",
+    "typescript": "^4.6.3"
+  }
 }
