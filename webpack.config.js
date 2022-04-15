@@ -6,8 +6,10 @@ module.exports = {
   mode: 'development',
   devtool: 'cheap-module-source-map',
   entry: {
-    popup: path.resolve('src/popup/popup'),
-    options: path.resolve('src/options/options'),
+    popup: path.resolve('src/popup/popup.tsx'),
+    options: path.resolve('src/options/options.tsx'),
+    background: path.resolve('src/background/background.ts'),
+    content: path.resolve('src/content/content.ts'),
   },
   module: {
     rules: [
