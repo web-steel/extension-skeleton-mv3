@@ -1,14 +1,17 @@
 const path = require('path')
+const pkg = require('./package.json')
+const manifest = require('./src/manifest.json')
 const CopyPlugin = require('copy-webpack-plugin')
 const HtmlPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const ManifestPlugin = require('webpack-extension-manifest-plugin')
 
 module.exports = {
   entry: {
-    popup: path.resolve('src/popup/popup.tsx'),
-    options: path.resolve('src/options/options.tsx'),
-    background: path.resolve('src/background/background.ts'),
-    content: path.resolve('src/content/content.ts'),
+    popup: path.resolve('src/popup.tsx'),
+    options: path.resolve('src/options.tsx'),
+    background: path.resolve('src/background.ts'),
+    content: path.resolve('src/content.ts'),
   },
   module: {
     rules: [
@@ -34,14 +37,22 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve('src/static'),
-          to: path.resolve('dist')
+          from: path.resolve('src/assets'),
+          to: path.resolve('dist/assets'),
         }
       ]
     }),
     ...getHtmlPlugins([
       'popup', 'options'
-    ])
+    ]),
+    new ManifestPlugin({
+      config: {
+        base: manifest,
+        extend: {
+          version: pkg.version
+        },
+      }
+    }),
   ],
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
