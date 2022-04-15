@@ -28,6 +28,6 @@
 
 ## Important Default Boilerplate Notes
 
-- Folders get flattened, static references to images from HTML do not need to be relative (i.e. `icon.png` instead of `../static/icon.png`)
+- Folders get flattened, static references to images from HTML do not need to be relative (i.e. `icon.png` instead of `../assets/icons/icon.png`)
 - Importing local ts/tsx/css files should be relative, since Webpack will build a dependancy graph using these paths
 - Update the manifest file as per usual for chrome related permissions, references to files in here should also be flattened and not be relative
