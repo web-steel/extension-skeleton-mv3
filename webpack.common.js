@@ -37,9 +37,13 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve('src/assets'),
+          from: path.resolve('public/assets'),
           to: path.resolve('dist/assets'),
-        }
+        },
+        {
+          from: path.resolve('public/locales'),
+          to: path.resolve('dist/_locales'),
+        },
       ]
     }),
     ...getHtmlPlugins([
