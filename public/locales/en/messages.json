@@ -1,1 +1,11 @@
-{}
+{
+  "EXTENSION_NAME": {
+    "message": "React Extension"
+  },
+  "EXTENSION_SHORT_NAME": {
+    "message": "React Extension"
+  },
+  "EXTENSION_DESCRIPTION": {
+    "message": "React Extension Description"
+  }
+}
