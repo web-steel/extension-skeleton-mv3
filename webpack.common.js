@@ -4,12 +4,13 @@ const manifest = require('./src/manifest.json')
 const CopyPlugin = require('copy-webpack-plugin')
 const HtmlPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin');
 const ManifestPlugin = require('webpack-extension-manifest-plugin')
 
 module.exports = {
   entry: {
-    popup: path.resolve('src/popup.tsx'),
-    options: path.resolve('src/options.tsx'),
+    popup: path.resolve('src/ui/entries/popup.tsx'),
+    options: path.resolve('src/ui/entries/options.tsx'),
     background: path.resolve('src/background.ts'),
     content: path.resolve('src/content.ts'),
   },
@@ -59,6 +60,7 @@ module.exports = {
     }),
   ],
   resolve: {
+    plugins: [new TsconfigPathsPlugin()],
     extensions: ['.tsx', '.ts', '.js'],
   },
   output: {

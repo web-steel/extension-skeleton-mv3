@@ -4,7 +4,13 @@
     "module": "es2022",
     "target": "ES6",
     "moduleResolution": "Node",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"],
+      "@ui/*": ["ui/*"],
+      "@components/*": ["ui/components/*"]
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules"]

@@ -1,13 +1,6 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client';
-
-const App: React.FC<{}> = () => {
-    return (
-        <div>
-            <h1>Hello</h1>
-        </div>
-    )
-}
+import App from '@components/App'
 
 const container = document.createElement('div')
 document.body.appendChild(container)
